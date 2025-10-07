@@ -40,12 +40,12 @@ This is a Next.js 15 application for "GarantíaYa", a service that helps people 
 
 ### Path Aliases
 
-Configured in `tsconfig.json` and `components.json`:
-- `@/`: Root directory
+Configured in `tsconfig.json` (as `@/*`) and aliased further in `components.json`:
+- `@/*`: Root directory (all paths)
 - `@/components`: Components directory
 - `@/lib`: Library utilities
-- `@/ui`: UI components (`components/ui`)
-- `@/hooks`: Hooks directory
+- `@/ui`: Alias for `@/components/ui`
+- `@/hooks`: Hooks directory (alias ready, directory may not exist yet)
 
 ### shadcn/ui Configuration
 
@@ -61,3 +61,13 @@ To add new shadcn/ui components, use: `npx shadcn@latest add [component-name]`
 ### Component Patterns
 
 The application follows a section-based landing page architecture where `app/page.tsx` imports and renders major sections as separate components. Each section is self-contained and can be edited independently.
+
+### Key Dependencies
+
+- **Animation**: `framer-motion` for animations, `vaul` for drawer components
+- **Date handling**: `date-fns` for date utilities, `react-day-picker` for date pickers
+- **Carousels**: `embla-carousel-react` for carousel functionality
+- **Charts**: `recharts` for data visualization
+- **Theming**: `next-themes` for dark/light mode support
+- **Notifications**: `sonner` for toast notifications
+- **Commands**: `cmdk` for command palette functionality
